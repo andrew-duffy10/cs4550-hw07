@@ -1,3 +1,5 @@
+Includes code from and based on Prof Tuck's in-class PhotoBlog example.
+
 # Scheduler
 
 To start your Phoenix server:
