@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<div class="row">
+<!-- Credit to Nat Tuck's photoblog lecture https://github.com/NatTuck/scratch-2021-01/blob/master/notes-4550/11-photoblog/notes.md -->
+
+    <div class="col">
+        <%= form_for @conn, Routes.session_path(@conn, :create),
+        [class: "form-inline"], fn f -> %>
+        <%= text_input f, :email, class: "form-control", placeholder: "Enter email" %>
+        <%= submit "Login", class: "btn btn-primary" %>
+        <% end %>
+        <p><%= link "Register", to: Routes.user_path(@conn, :new) %></p>
+    </div>
+
+</div>
