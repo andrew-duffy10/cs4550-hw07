@@ -17,6 +17,7 @@
   <%= error_tag f, :email %>
 </div>
 
+
   <div>
     <%= submit "Save", class: "btn btn-primary" %>
   </div>

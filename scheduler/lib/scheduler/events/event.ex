@@ -6,6 +6,9 @@ defmodule Scheduler.Events.Event do
     field :date, :date
     field :desc, :string
     field :name, :string
+    belongs_to :user, Scheduler.Users.User
+    field :guests, {:array, :string}, default: []
+    has_many :comments, Scheduler.Comments.Comment
 
     timestamps()
   end
@@ -13,7 +16,7 @@ defmodule Scheduler.Events.Event do
   @doc false
   def changeset(event, attrs) do
     event
-    |> cast(attrs, [:name, :date, :desc])
-    |> validate_required([:name, :date, :desc])
+    |> cast(attrs, [:name, :date, :desc, :user_id, :guests])
+    |> validate_required([:name, :date, :desc, :user_id, :guests])
   end
 end

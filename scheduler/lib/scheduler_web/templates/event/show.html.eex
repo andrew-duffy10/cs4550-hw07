@@ -16,8 +16,43 @@
     <strong>Desc:</strong>
     <%= @event.desc %>
   </li>
+    
+  <li>
+    <strong>Host:</strong>
+    <%= @event.user.name %>
+  </li>
+    
+  <li>
+      <strong>Guests:</strong>
+      <%= @event.guests %>
+
+  </li>
+    
+    <li>
+      <strong>Comments:</strong>
+      <%= @event.comments %>
+
+  </li>
 
 </ul>
 
-<span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event), class: "btn btn-primary" %></span>
+
+
+<%= if @conn.assigns[:current_user] do %>
+  <%= if @event.user_id == @current_user.id do %>
+    <span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event), class: "btn btn-primary" %></span>
+   
+  <% end %>
+
+
+<span><%= link "Comment", to: Routes.comment_path(@conn, :index), class: "btn btn-primary" %></span>
+<% end %> 
+
+
+
 <span><%= link "Back", to: Routes.event_path(@conn, :index), class: "btn btn-primary" %></span>
+
+
+
+
+

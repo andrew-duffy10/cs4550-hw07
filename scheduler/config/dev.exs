@@ -2,8 +2,13 @@ use Mix.Config
 
 # Configure your database
 config :scheduler, Scheduler.Repo,
+<<<<<<< HEAD
   username: "andrew2",
   password: "ArtyChad1010",
+=======
+  username: "username",
+  password: "password",
+>>>>>>> 0649c7fa7868a3b291fadd7b3a5a439c039686e7
   database: "scheduler_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,

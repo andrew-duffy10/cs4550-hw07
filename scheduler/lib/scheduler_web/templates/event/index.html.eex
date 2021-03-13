@@ -6,6 +6,7 @@
       <th>Name</th>
       <th>Date</th>
       <th>Desc</th>
+      <th>Host</th>
 
       <th></th>
     </tr>
@@ -16,11 +17,10 @@
       <td><%= event.name %></td>
       <td><%= event.date %></td>
       <td><%= event.desc %></td>
+      <td><%= event.user.name %></td>
 
       <td>
         <span><%= link "Show", to: Routes.event_path(@conn, :show, event),
-class: "btn btn-primary" %></span>
-        <span><%= link "Edit", to: Routes.event_path(@conn, :edit, event),
 class: "btn btn-primary" %></span>
         <span><%= link "Delete", to: Routes.event_path(@conn, :delete, event),
 class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %></span>
