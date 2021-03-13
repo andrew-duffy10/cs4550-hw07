@@ -17,10 +17,10 @@ defmodule SchedulerWeb.Router do
 
   scope "/", SchedulerWeb do
     pipe_through :browser
-
     get "/", PageController, :index
     resources "/users", UserController
     resources "/events", EventController
+    resources "/comments", CommentController
     resources "/sessions", SessionController,
       only: [:create, :delete], singleton: true
     resources "/login", LoginController

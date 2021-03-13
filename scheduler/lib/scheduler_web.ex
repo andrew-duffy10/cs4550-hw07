@@ -23,6 +23,7 @@ defmodule SchedulerWeb do
 
       import Plug.Conn
       import SchedulerWeb.Gettext
+      
       alias SchedulerWeb.Router.Helpers, as: Routes
     end
   end
@@ -68,6 +69,7 @@ defmodule SchedulerWeb do
 
       import SchedulerWeb.ErrorHelpers
       import SchedulerWeb.Gettext
+      import SchedulerWeb.ListHelpers
       alias SchedulerWeb.Router.Helpers, as: Routes
     end
   end
